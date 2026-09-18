@@ -1,0 +1,259 @@
+{
+  "cases": [
+    {
+      "case_id": "CASE-2026-001",
+      "title": "主播“小狐狸”拆分网址引流协查",
+      "retention_until": "2027-09-18T00:00:00+00:00"
+    },
+    {
+      "case_id": "CASE-2026-002",
+      "title": "用户“团宠小兔”昵称/评论疑似拼出风险域名",
+      "retention_until": "2027-03-11T00:00:00+00:00"
+    },
+    {
+      "case_id": "CASE-2026-003",
+      "title": "短时二维码引流模板串案（跨案共享线索）",
+      "retention_until": "2027-09-18T00:00:00+00:00"
+    },
+    {
+      "case_id": "CASE-2025-889",
+      "title": "历史协查案件（保全期限届满样例）",
+      "retention_until": "2026-03-01T00:00:00+00:00"
+    }
+  ],
+  "events": [
+    {
+      "event_id": "evt_fox_name_1",
+      "case_id": "CASE-2026-001",
+      "source_system": "profile_scanner",
+      "source_ref": "douyin:acc_fox01:nickname:20260910T1158",
+      "event_type": "profile_nickname",
+      "account_id": "acc_fox01",
+      "occurred_at": "2026-09-10T11:58:00+00:00",
+      "payload": {
+        "platform": "douyin",
+        "nickname": "小狐狸7788",
+        "text": "昵称：小狐狸7788"
+      }
+    },
+    {
+      "event_id": "evt_fox_bio_p0",
+      "case_id": "CASE-2026-001",
+      "source_system": "profile_scanner",
+      "source_ref": "douyin:acc_fox01:bio:20260910T1203",
+      "event_type": "profile_field",
+      "account_id": "acc_fox01",
+      "occurred_at": "2026-09-10T12:03:00+00:00",
+      "payload": {
+        "field": "signature",
+        "text": "简介里出现半截字符 www",
+        "fragment": {"key": "fox_url_1", "seq": 0, "text": "www"}
+      }
+    },
+    {
+      "event_id": "evt_fox_live_p1",
+      "case_id": "CASE-2026-001",
+      "source_system": "live_snapshot",
+      "source_ref": "douyin:room_99182:ocr:000398",
+      "event_type": "image_summary",
+      "account_id": "acc_fox01",
+      "occurred_at": "2026-09-10T12:05:20+00:00",
+      "payload": {
+        "summary": "直播瞬间飘过的贴纸文字被画面摘要 OCR 捕获，仅停留两秒",
+        "text": "福利地址②：.dianzan（后半段看置顶）",
+        "fragment": {"key": "fox_url_1", "seq": 1, "text": ".dianzan"}
+      }
+    },
+    {
+      "event_id": "evt_fox_qr",
+      "case_id": "CASE-2026-001",
+      "source_system": "live_snapshot",
+      "source_ref": "douyin:room_99182:frame:000412",
+      "event_type": "image_summary",
+      "account_id": "acc_fox01",
+      "occurred_at": "2026-09-10T12:05:10+00:00",
+      "payload": {
+        "summary": "直播瞬间画面右下角出现白底二维码，很快切换",
+        "text": "画面右下角疑似二维码",
+        "qr": {"duration_seconds": 1.5, "decoded_hint": "dianzan88.com"}
+      }
+    },
+    {
+      "event_id": "evt_fox_audio",
+      "case_id": "CASE-2026-001",
+      "source_system": "audio_transcriber",
+      "source_ref": "douyin:room_99182:asr:20260910T1206",
+      "event_type": "audio_transcript",
+      "account_id": "acc_fox01",
+      "occurred_at": "2026-09-10T12:06:00+00:00",
+      "payload": {
+        "text": "想领福利的记一下啊，三打不溜点dianzan88点卡姆，浏览器自己输",
+        "asr_confidence": 0.91
+      }
+    },
+    {
+      "event_id": "evt_fox_cmt_p1",
+      "case_id": "CASE-2026-001",
+      "source_system": "comment_scanner",
+      "source_ref": "douyin:cmt_771002",
+      "event_type": "comment",
+      "account_id": "acc_fox01",
+      "occurred_at": "2026-09-10T12:08:30+00:00",
+      "payload": {
+        "text": "主播自己置顶的评论：域名里的数字在这 88，别连错",
+        "fragment": {"key": "fox_url_1", "seq": 2, "text": "88"}
+      }
+    },
+    {
+      "event_id": "evt_fox_fav_p2",
+      "case_id": "CASE-2026-001",
+      "source_system": "favorite_scanner",
+      "source_ref": "douyin:acc_fox01:fav:20260910T1209",
+      "event_type": "favorite_entry",
+      "account_id": "acc_fox01",
+      "occurred_at": "2026-09-10T12:09:20+00:00",
+      "payload": {
+        "text": "公开收藏夹“福利领取”收录的标题片段 .com/x6",
+        "fragment": {"key": "fox_url_1", "seq": 3, "text": ".com/x6"}
+      }
+    },
+    {
+      "event_id": "evt_fox_name_2",
+      "case_id": "CASE-2026-001",
+      "source_system": "profile_scanner",
+      "source_ref": "douyin:acc_fox01:nickname:20260912T0800",
+      "event_type": "profile_nickname",
+      "account_id": "acc_fox01",
+      "occurred_at": "2026-09-12T08:00:00+00:00",
+      "payload": {
+        "platform": "douyin",
+        "nickname": "幸运小狐狸",
+        "text": "昵称改为：幸运小狐狸"
+      }
+    },
+    {
+      "event_id": "evt_rabbit_name",
+      "case_id": "CASE-2026-002",
+      "source_system": "profile_scanner",
+      "source_ref": "kuaishou:acc_rabbit55:nickname:20260911T0900",
+      "event_type": "profile_nickname",
+      "account_id": "acc_rabbit55",
+      "occurred_at": "2026-09-11T09:00:00+00:00",
+      "payload": {
+        "platform": "kuaishou",
+        "nickname": "团宠小兔",
+        "text": "昵称：团宠小兔"
+      }
+    },
+    {
+      "event_id": "evt_rabbit_bio_p0",
+      "case_id": "CASE-2026-002",
+      "source_system": "profile_scanner",
+      "source_ref": "kuaishou:acc_rabbit55:bio:20260911T0905",
+      "event_type": "profile_field",
+      "account_id": "acc_rabbit55",
+      "occurred_at": "2026-09-11T09:05:00+00:00",
+      "payload": {
+        "field": "signature",
+        "text": "反诈提醒：大家举报这个骗子站 www.huanpi163，别信！",
+        "fragment": {"key": "rabbit_url_1", "seq": 0, "text": "www.huanpi163"}
+      }
+    },
+    {
+      "event_id": "evt_rabbit_cmt_p1",
+      "case_id": "CASE-2026-002",
+      "source_system": "comment_scanner",
+      "source_ref": "kuaishou:cmt_884201",
+      "event_type": "comment",
+      "account_id": "acc_rabbit55",
+      "occurred_at": "2026-09-11T09:10:00+00:00",
+      "payload": {
+        "text": "谨防上当，骗子域名后半段：.net，已提交举报",
+        "fragment": {"key": "rabbit_url_1", "seq": 1, "text": ".net"}
+      }
+    },
+    {
+      "event_id": "evt_fox_cmt_p1_dup",
+      "case_id": "CASE-2026-001",
+      "source_system": "comment_scanner",
+      "source_ref": "douyin:cmt_771002",
+      "event_type": "comment",
+      "account_id": "acc_fox01",
+      "occurred_at": "2026-09-10T12:08:30+00:00",
+      "payload": {
+        "text": "【重复上报】主播自己置顶的评论：域名里的数字在这 88，别连错",
+        "fragment": {"key": "fox_url_1", "seq": 2, "text": "88"}
+      }
+    },
+    {
+      "event_id": "evt_old_case_1",
+      "case_id": "CASE-2025-889",
+      "source_system": "comment_scanner",
+      "source_ref": "douyin:cmt_2025_old_001",
+      "event_type": "comment",
+      "account_id": "acc_old_77",
+      "occurred_at": "2026-02-20T10:00:00+00:00",
+      "payload": {
+        "text": "旧案留存片段（保全至 2026-03-01，现已届满）"
+      }
+    },
+    {
+      "event_id": "evt_shop_verify",
+      "case_id": "CASE-2026-003",
+      "source_system": "profile_scanner",
+      "source_ref": "douyin:acc_shop09:license:20260911T1500",
+      "event_type": "profile_field",
+      "account_id": "acc_shop09",
+      "occurred_at": "2026-09-11T15:00:00+00:00",
+      "payload": {
+        "field": "verification",
+        "text": "已认证备案商户：玖玖优选旗舰店",
+        "verified_merchant": true,
+        "platform": "douyin"
+      }
+    },
+    {
+      "event_id": "evt_shop_bio_p0",
+      "case_id": "CASE-2026-003",
+      "source_system": "profile_scanner",
+      "source_ref": "douyin:acc_shop09:bio:20260911T1502",
+      "event_type": "profile_field",
+      "account_id": "acc_shop09",
+      "occurred_at": "2026-09-11T15:02:00+00:00",
+      "payload": {
+        "field": "signature",
+        "text": "官方客服链接片段 www",
+        "fragment": {"key": "shop_url_1", "seq": 0, "text": "www"}
+      }
+    },
+    {
+      "event_id": "evt_shop_cmt_p1",
+      "case_id": "CASE-2026-003",
+      "source_system": "comment_scanner",
+      "source_ref": "douyin:cmt_902771",
+      "event_type": "comment",
+      "account_id": "acc_shop09",
+      "occurred_at": "2026-09-11T15:05:00+00:00",
+      "payload": {
+        "text": "客服自动回复：官网域名中段 .jiujiu-mall",
+        "fragment": {"key": "shop_url_1", "seq": 1, "text": ".jiujiu-mall"}
+      }
+    },
+    {
+      "event_id": "evt_shop_fav_p2",
+      "case_id": "CASE-2026-003",
+      "source_system": "favorite_scanner",
+      "source_ref": "douyin:acc_shop09:fav:20260911T1507",
+      "event_type": "favorite_entry",
+      "account_id": "acc_shop09",
+      "occurred_at": "2026-09-11T15:07:00+00:00",
+      "payload": {
+        "text": "收藏夹收录官方售后页片段 .com/service",
+        "fragment": {"key": "shop_url_1", "seq": 2, "text": ".com/service"}
+      }
+    }
+  ],
+  "shares": [
+    {"event_id": "evt_fox_qr", "case_id": "CASE-2026-003", "note": "二维码模板与另案一致，共享同一条线索，不复制素材"}
+  ]
+}

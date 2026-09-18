@@ -1,8 +1,10 @@
 {
-  "name": "service-baseline",
+  "name": "redirect-evidence",
   "private": true,
   "scripts": {
-    "test": "node test_service.js"
+    "test": "node test_service.js",
+    "demo": "python3 demo.py",
+    "start": "python3 service.py --seed samples/events.json"
   }
 }
 
